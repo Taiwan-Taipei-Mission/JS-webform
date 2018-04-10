@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Drive API Quickstart</title>
+    <title>JS-GDrive</title>
     <meta charset='utf-8' />
 </head>
 <body>
+<!--
 <p>Drive API Quickstart</p>
-
-<!--Add buttons to initiate auth sequence and sign out-->
+<!-Add buttons to initiate auth sequence and sign out->
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
 
@@ -23,7 +23,7 @@
 
     // Authorization scopes required by the API; multiple scopes can be
     // included, separated by spaces.
-    var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+    var SCOPES = 'https://www.googleapis.com/auth/drive';
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
@@ -73,18 +73,18 @@
 
     /**
      *  Sign in the user upon button click.
-     */
+
     function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
     }
-
+     */
     /**
      *  Sign out the user upon button click.
-     */
+
     function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
     }
-
+     */
     /**
      * Append a pre element to the body containing the given message
      * as its text node. Used to display the results of the API call.
@@ -123,6 +123,55 @@
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script> -->
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+    /** SHEET ON TAIWAN ENGLISH DRIVE: https://drive.google.com/open?id=1jvP-PZt36ctwpUkPErxSmtRsxK98iQXOn2TsvmJvTY8 ------ OG EXAMPLE ONE: 1ZdR3L3qP4Bkq8noWLJHSr_iBau0DNT4Kli4SxNc2YEo**/
+    function loadfile() {
+        var fileId = '1jvP-PZt36ctwpUkPErxSmtRsxK98iQXOn2TsvmJvTY8';
+        var dest = fs.createWriteStream('/tmp/resume.pdf');
+        drive.files.export({
+            fileId: fileId,
+            mimeType: 'text/csv'
+        })
+            .on('end', function () {
+                console.log('Done');
+            })
+            .on('error', function (err) {
+                console.log('Error during download', err);
+            })
+            .pipe(dest);
+    }
+    function start() {
+        // 2. Initialize the JavaScript client library.
+        gapi.client.init({
+            'apiKey': 'AIzaSyBDT2JIwFq7LIGMDO6bteiEzHH4Ph3oMZo',
+            // clientId and scope are optional if auth is not required.
+            'clientId': '297220723309-65hif087jh1lakphh20cg4h1b70cggj9.apps.googleusercontent.com',
+            'scope': 'profile',
+        }).then(function() {
+            // 3. Initialize and make the API request.
+            return gapi.client.request({
+                'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
+            })
+        }).then(function(response) {
+            console.log(response.result);
+        }, function(reason) {
+            console.log('Error: ' + reason.result.error.message);
+        });
+    };
+    // 1. Load the JavaScript client library.
+    gapi.load('client', start);
+
+
+    /**
+     * https://developers.google.com/drive/v3/web/quickstart/js
+     * https://www.w3schools.com/js/js_validation.asp
+     * https://www.w3schools.com/html/html_form_attributes.asp
+     * https://developers.google.com/drive/v3/web/manage-downloads
+     */
 </script>
+
+
 </body>
 </html>
