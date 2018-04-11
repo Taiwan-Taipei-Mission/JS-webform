@@ -15,6 +15,8 @@
         性別:<br>
         <input type="radio" name="gender" value="male">男<br>
         <input type="radio" name="gender" value="female">女<br>
+        您會上課的地點:
+        <p id="demo"></p>
         LINE ID:<br>
         <input type="text" name="lineid"><br>
         聯絡電話:<br>
@@ -28,9 +30,33 @@
         <input type="radio" name="intermediate" value="male">中級班<br>
         <input type="radio" name="advanced" value="female">高級班<br><br>
         備註:<br>
-        <textarea name="message" rows="5" cols="30"></textarea>
-        <!--<input type="text" name="comments"><br><br>-->
+        <textarea name="message" rows="5" cols="30"></textarea><br><br>
+        <!--<input type="text" name="comments">-->
         <input type="submit" value="Submit">
     </fieldset>
+    <script type="text/javascript">
+        var Classlvl = "jinhua"
+        function whatclassyouwant(theclass) {
+            var Elclass = RegExp(theclass).exec(window.location.search)
+        }
+        document.getElementById("demo").innerHTML = window.location.href;
+        /**function getParameterByName(name) {
+            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+
+        jQuery(document).ready(function ($) {
+            var persistedQueryParam = getParameterByName('discountcode');
+
+            if (persistedQueryParam && persistedQueryParam.length > 0) {
+                $('a[href]').each(function () {
+                    var elem = $(this);
+                    var href = elem.attr('href');
+                    elem.attr('href', href + (href.indexOf('?') != -1 ? '&' : '?') + 'discountcode=' + persistedQueryParam);
+                });
+            }
+        });**/
+        whatclassyouwant(Classlvl)
+    </script>
 </body>
 </html>

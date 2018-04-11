@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4b65c1-823b-4376-ac1f-76e70ef64d31" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/SQSP ACC.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GdriveAPI.html" beforeDir="false" afterPath="$PROJECT_DIR$/GdriveAPI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebForm.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +22,26 @@
       <file leaf-file-name="WebForm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="-293">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SQSP ACC.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SQSP ACC.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="151" column="56" lean-forward="true" selection-start-line="151" selection-start-column="56" selection-end-line="151" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GdriveAPI.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="236" column="9" selection-start-line="236" selection-start-column="9" selection-end-line="236" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -35,21 +55,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GdriveAPI.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1915">
-              <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,9 +71,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebForm.html" />
         <option value="$PROJECT_DIR$/Scratch" />
         <option value="$PROJECT_DIR$/GdriveAPI.html" />
+        <option value="$PROJECT_DIR$/WebForm.html" />
+        <option value="$PROJECT_DIR$/Test.js" />
+        <option value="$PROJECT_DIR$/SQSP ACC.html" />
       </list>
     </option>
   </component>
@@ -121,7 +135,7 @@
       <updated>1523348281260</updated>
       <workItem from="1523348283690" duration="2877000" />
       <workItem from="1523356794660" duration="4741000" />
-      <workItem from="1523420020667" duration="1227000" />
+      <workItem from="1523420020667" duration="12331000" />
     </task>
     <task id="LOCAL-00001" summary="new functions for downloading from Drive?">
       <created>1523362147944</created>
@@ -130,19 +144,27 @@
       <option name="project" value="LOCAL" />
       <updated>1523362147944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="More new functions to manipulate drive">
+      <created>1523421343816</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523421343816</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8845000" />
+    <option name="totallyTimeSpent" value="19949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23242188" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" weight="0.32863188" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32863188" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -166,7 +188,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new functions for downloading from Drive?" />
-    <option name="LAST_COMMIT_MESSAGE" value="new functions for downloading from Drive?" />
+    <MESSAGE value="More new functions to manipulate drive" />
+    <option name="LAST_COMMIT_MESSAGE" value="More new functions to manipulate drive" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -216,17 +239,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebForm.html">
+    <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        <state relative-caret-position="505">
+          <caret line="236" column="9" selection-start-line="236" selection-start-column="9" selection-end-line="236" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
+    <entry file="file://$PROJECT_DIR$/WebForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1915">
-          <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
+        <state relative-caret-position="-293">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQSP ACC.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="151" column="56" lean-forward="true" selection-start-line="151" selection-start-column="56" selection-end-line="151" selection-end-column="56" />
         </state>
       </provider>
     </entry>

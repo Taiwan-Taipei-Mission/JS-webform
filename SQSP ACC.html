@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACCORDIAN!</title>
+</head>
+<body>
+<style>
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+        background-color:#38cc70;
+        color: #F1F1F1;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: center;
+        border: 10px ;
+        outline: none;
+        transition: 0.4s;
+        font-size: 1.1em;
+        border:.03px solid #32b764;
+        font-weight: 600
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #2ca359;
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #black;
+        float: left;
+        margin-left: 1px;
+    }
+
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+
+    .panel a{
+        color: black;
+        background: #79faa6;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1em;
+        border: solid 1px #38CC70;
+        padding: 14px;
+        text-decoration: none;
+    }
+
+    .panel a:hover {
+        background: #5dd58b;
+    }
+</style>
+
+<button class="accordion">台北市</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/jin-hua">台北市中心 (信義、大安、萬華、大同、中正、中山)</a>
+    <a href="https://taiwaneng.com/nei-hu">內湖</a>
+    <a href="https://taiwaneng.com/song-shan">松山</a>
+    <a href="https://taiwaneng.com/bei-tou">北投</a>
+    <a href="https://taiwaneng.com/shi-lin">士林</a>
+    <a href="https://taiwaneng.com/mu-zha">木柵</a>
+</div>
+
+<button class="accordion">新北市</button>
+<div class="panel">
+    <!--<a href="https://taiwaneng.com/sanchong-luzhou">三重、蘆洲</a>-->
+    <a href="">三重、蘆洲</a>
+    <a href="https://taiwaneng.com/dan-shui">淡水</a>
+    <a href="https://taiwaneng.com/xin-dian">新店</a>
+    <a href="https://taiwaneng.com/an-kang">安坑</a>
+    <a href="https://taiwaneng.com/shuang-he">中和，永和</a>
+    <a href="https://taiwaneng.com/tucheng-shulin">土城、樹林</a>
+    <a href="https://taiwaneng.com/ban-qiao">板橋</a>
+    <a href="https://taiwaneng.com/san-xia">三峽</a>
+    <a href="https://taiwaneng.com/xin-zhuang">新莊</a>
+    <a href="https://taiwaneng.com/xi-zhi">汐止</a>
+    <a href="https://taiwaneng.com/lin-kou">林口</a>
+</div>
+
+<button class="accordion">基隆市</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/ji-long">基隆</a>
+</div>
+
+<button class="accordion">桃園縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/tao-yuan">北桃園</a>
+    <a href="https://taiwaneng.com/tao-er">南桃園</a>
+    <a href="https://taiwaneng.com/gui-shan">龜山-陸光新城</a>
+    <a href="https://taiwaneng.com/ba-de">八德</a>
+    <a href="https://taiwaneng.com/zhong-li">中壢</a>
+    <a href="https://taiwaneng.com/long-tan">龍潭</a>
+</div>
+
+<button class="accordion">新竹縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/xin-zhu">新竹</a>
+    <a href="https://taiwaneng.com/zhu-bei">竹北</a>
+    <a href="https://taiwaneng.com/zhu-dong">竹東</a>
+</div>
+
+<button class="accordion">宜蘭縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/yi-lan">宜蘭市</a>
+    <a href="https://taiwaneng.com/luo-dong">宜蘭(羅東)</a>
+</div>
+
+<button class="accordion">苗栗縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/zhu-nan">竹南</a>
+    <a href="https://taiwaneng.com/miao-li">苗栗市</a>
+    <a href="https://taiwaneng.com/tou-fen">頭份</a>
+</div>
+
+<button class="accordion">花蓮縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/hua-lian">花蓮市</a>
+    <a href="https://taiwaneng.com/feng-lin">鳳林</a>
+    <a href="https://taiwaneng.com/donghua-university">國立東華大學</a>
+    <a href="https://taiwaneng.com/yu-li">玉里</a>
+</div>
+
+<button class="accordion">台東縣</button>
+<div class="panel">
+    <a href="https://taiwaneng.com/tai-dong">台東市</a>
+</div>
+
+<p id="display"></p>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", openpanel);
+}
+function openpanel (){
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    var href = panel.nextSibling;
+    document.getElementById("display").innerHTML = href;
+    if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+};
+/** https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents **/
+</script>
+</body>
+</html>
