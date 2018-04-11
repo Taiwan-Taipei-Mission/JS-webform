@@ -127,49 +127,113 @@
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
     /** SHEET ON TAIWAN ENGLISH DRIVE: https://drive.google.com/open?id=1jvP-PZt36ctwpUkPErxSmtRsxK98iQXOn2TsvmJvTY8 ------ OG EXAMPLE ONE: 1ZdR3L3qP4Bkq8noWLJHSr_iBau0DNT4Kli4SxNc2YEo**/
-    function loadfile() {
-        var fileId = '1jvP-PZt36ctwpUkPErxSmtRsxK98iQXOn2TsvmJvTY8';
-        var dest = fs.createWriteStream('/tmp/resume.pdf');
-        drive.files.export({
-            fileId: fileId,
-            mimeType: 'text/csv'
+/*
+Get contents
+*/
+function getContentOfFile(theID){ //gets the content of the file
+    current = theID;
+    gapi.client.request({'path': '/drive/v2/files/'+theID,'method': 'GET',callback: function ( theResponseJS, theResponseTXT ) {
+            var myToken = gapi.auth.getToken();
+            var myXHR   = new XMLHttpRequest();
+            myXHR.open('GET', theResponseJS.downloadUrl, true );
+            myXHR.setRequestHeader('Authorization', 'Bearer ' + myToken.access_token );
+            myXHR.onreadystatechange = function( theProgressEvent ) {
+                if (myXHR.readyState == 4) {
+                    if ( myXHR.status == 200 ) {
+                        var code = myXHR.response;
+                    }
+                }
+            }
+            myXHR.send();
+        }
+    });
+}
+/*
+Download a file
+*/
+function downloadFile(fileId) {
+    var request = gapi.client.drive.files.get({
+        'fileId': fileId
+    });
+    request.execute(function(resp) {
+        window.location.assign(resp.webContentLink);
+    });
+}
+/*
+Get the title of a file
+*/
+function getTitle(fileId){
+    var request = gapi.client.drive.files.get({
+        'fileId': fileId
+    });
+    request.execute(function(resp) {
+        title = resp.title;
+        if(typeof title === 'undefined' || title === "undefined"){
+            //error
+            return false;
+        }
+        document.getElementById('renameInput').value = title;
+        checkFileName(resp.title);
+    });
+}
+/*
+How to refresh your access token (they expire every hour)
+*/
+window.setInterval(function(){
+    refreshToken();
+},3000000); //<--this is in milliseconds
+function refreshToken() {
+    gapi.auth.authorize({'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate':true},tokenRefreshed);
+    //you have to get your client id and the proper scopes
+    window.setInterval(function(){
+        refreshToken();
+    },3000000);
+}
+function tokenRefreshed(result){
+}
+function loadfile() {
+    var fileId = '1jvP-PZt36ctwpUkPErxSmtRsxK98iQXOn2TsvmJvTY8';
+    var dest = fs.createWriteStream('/tmp/resume.pdf');
+    drive.files.export({
+        fileId: fileId,
+        mimeType: 'text/csv'
+    })
+        .on('end', function () {
+            console.log('Done');
         })
-            .on('end', function () {
-                console.log('Done');
-            })
-            .on('error', function (err) {
-                console.log('Error during download', err);
-            })
-            .pipe(dest);
-    }
-    function start() {
-        // 2. Initialize the JavaScript client library.
-        gapi.client.init({
-            'apiKey': 'AIzaSyBDT2JIwFq7LIGMDO6bteiEzHH4Ph3oMZo',
-            // clientId and scope are optional if auth is not required.
-            'clientId': '297220723309-65hif087jh1lakphh20cg4h1b70cggj9.apps.googleusercontent.com',
-            'scope': 'profile',
-        }).then(function() {
-            // 3. Initialize and make the API request.
-            return gapi.client.request({
-                'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
-            })
-        }).then(function(response) {
-            console.log(response.result);
-        }, function(reason) {
-            console.log('Error: ' + reason.result.error.message);
-        });
-    };
-    // 1. Load the JavaScript client library.
-    gapi.load('client', start);
+        .on('error', function (err) {
+            console.log('Error during download', err);
+        })
+        .pipe(dest);
+}
+function start() {
+    // 2. Initialize the JavaScript client library.
+    gapi.client.init({
+        'apiKey': 'AIzaSyBDT2JIwFq7LIGMDO6bteiEzHH4Ph3oMZo',
+        // clientId and scope are optional if auth is not required.
+        'clientId': '297220723309-65hif087jh1lakphh20cg4h1b70cggj9.apps.googleusercontent.com',
+        'scope': 'profile',
+    }).then(function() {
+        // 3. Initialize and make the API request.
+        return gapi.client.request({
+            'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
+        })
+    }).then(function(response) {
+        console.log(response.result);
+    }, function(reason) {
+        console.log('Error: ' + reason.result.error.message);
+    });
+};
 
-
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
     /**
      * https://developers.google.com/drive/v3/web/quickstart/js
      * https://www.w3schools.com/js/js_validation.asp
      * https://www.w3schools.com/html/html_form_attributes.asp
      * https://developers.google.com/drive/v3/web/manage-downloads
-     */
+     * https://gist.github.com/mkaminsky11/8624150 <--- HOW TO DO IT ALL!
+     **/
 </script>
 
 

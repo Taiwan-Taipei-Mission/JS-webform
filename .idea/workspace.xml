@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4b65c1-823b-4376-ac1f-76e70ef64d31" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GdriveAPI.html" beforeDir="false" afterPath="$PROJECT_DIR$/GdriveAPI.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,7 +20,7 @@
       <file leaf-file-name="WebForm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
+            <state relative-caret-position="608">
               <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
             </state>
           </provider>
@@ -37,8 +38,8 @@
       <file leaf-file-name="GdriveAPI.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="128" column="39" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
+            <state relative-caret-position="1915">
+              <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
             </state>
           </provider>
         </entry>
@@ -71,10 +72,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="102" />
-    <option name="y" value="27" />
+    <option name="x" value="101" />
+    <option name="y" value="26" />
     <option name="width" value="1750" />
-    <option name="height" value="969" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -82,8 +83,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -119,16 +120,24 @@
       <option name="presentableId" value="Default" />
       <updated>1523348281260</updated>
       <workItem from="1523348283690" duration="2877000" />
-      <workItem from="1523356794660" duration="4539000" />
+      <workItem from="1523356794660" duration="4741000" />
+      <workItem from="1523420020667" duration="1227000" />
     </task>
+    <task id="LOCAL-00001" summary="new functions for downloading from Drive?">
+      <created>1523362147944</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1523362147944</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7416000" />
+    <option name="totallyTimeSpent" value="8845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -144,9 +153,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +164,37 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new functions for downloading from Drive?" />
+    <option name="LAST_COMMIT_MESSAGE" value="new functions for downloading from Drive?" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WebForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scratch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3249">
+          <caret line="171" column="7" lean-forward="true" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -179,15 +218,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
+        <state relative-caret-position="608">
           <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GdriveAPI.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="128" column="39" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
+        <state relative-caret-position="1915">
+          <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
         </state>
       </provider>
     </entry>
